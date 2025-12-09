@@ -2,7 +2,8 @@
 
 import { useContext } from "react";
 import { ThemeContext } from "@/contexts/ThemeProvider";
-import { Button } from "antd";
+
+import { Switch } from 'antd';
 
 export default function Navbar() {
   const { isDark, toggleTheme } = useContext(ThemeContext);
@@ -10,13 +11,13 @@ export default function Navbar() {
   return (
     <nav
       style={{
-        width: "100vw",
         padding: "12px 24px",
         display: "flex",
-        justifyContent: "space-evenly",
+        justifyContent: "space-between",
         alignItems: "center",
         background: "var(--container)",
         borderBottom: "1px solid var(--border)",
+        borderRadius: 5,
         position: "sticky",
         top: 0,
         zIndex: 50,
@@ -25,7 +26,7 @@ export default function Navbar() {
       <h2 style={{ margin: 0, fontWeight: 600 }}>Portfolio</h2>
 
       <div style={{ display: "flex", gap: 12 }}>
-        <a href="/" style={{ color: "var(--text)", textDecoration: "none" }}>
+        <a href="#home" style={{ color: "var(--text)", textDecoration: "none" }}>
           Home
         </a>
         <a href="#skills" style={{ color: "var(--text)", textDecoration: "none" }}>
@@ -38,9 +39,12 @@ export default function Navbar() {
           Contact
         </a>
 
-        <Button type="primary" onClick={toggleTheme}>
-          {isDark ? "Light Mode" : "Dark Mode"}
-        </Button>
+          <Switch
+          checked={isDark}
+          onChange={(checked) => toggleTheme(checked)}
+          checkedChildren="🌙"
+          unCheckedChildren="☀️"
+        />
       </div>
     </nav>
   );

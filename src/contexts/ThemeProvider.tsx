@@ -23,7 +23,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       colorBgBase: colors.background,
       colorBorder: colors.border,
       fontFamily: "Inter, sans-serif",
-      borderRadius: 8,
+      borderRadius: 5,
     },
     components: {
       Layout: {
@@ -35,7 +35,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       },
       Button: {
         colorPrimary: colors.primary,
-        borderRadius: 6,
+        borderRadius: 5,
       },
       Input: {
         colorBgContainer: isDark ? "#1d1d1d" : "#fafafa",

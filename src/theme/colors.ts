@@ -1,4 +1,4 @@
-export const lightColors = {
+export const darkColors = {
   primary: "#79abf1ff",
   background: "#f5f7fa",
   container: "#ffffff",
@@ -7,7 +7,7 @@ export const lightColors = {
   link: "#1670edff",
 };
 
-export const darkColors = {
+export const lightColors  = {
   primary: "#160727ff",
   background: "#141414",
   container: "#1f1f1f",
