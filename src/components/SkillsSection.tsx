@@ -1,3 +1,4 @@
+"use client";
 import { Masonry } from "antd";
 
 const imageList = [

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Footer() {
   return (
     <footer
@@ -9,6 +11,7 @@ export default function Footer() {
         borderRadius: 5,
         marginTop: 30,
       }}
+      className="panel"
     >
       <p style={{ margin: 0, color: "var(--text)" }}>
         © {new Date().getFullYear()} Portfolio — All Rights Reserved.

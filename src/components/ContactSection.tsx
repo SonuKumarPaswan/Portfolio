@@ -1,3 +1,5 @@
+"use client";
+
 export default function ContactSection() {
   return (
     <section id="contact" style={{ padding: "80px 20px" }}>
