@@ -216,7 +216,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
         >
           <Image
-            src="/image/tourism.jpg"
+            src="/image/profile.png"
             alt="Sonu Paswan"
             width={420}
             height={400}
@@ -234,8 +234,9 @@ export default function AboutSection() {
           style={{
             padding: 35,
             background: "var(--container)",
-            borderRadius: 14,
-            boxShadow: "0px 0px 1px var(--shadow)",
+            // border: "1px solid var(--border)",
+            borderRadius: 14, 
+            boxShadow: "0px 0px 3px 0px var(--shadow)",
           }}
         >
           <i><h2>About Me</h2></i>
@@ -385,8 +386,8 @@ function EducationCard({
         borderRadius: 10,
         textDecoration: "none",
         color: "inherit",
-        boxShadow: "0px 0px 0px var(--shadow)",
-        background: "var(--container)",
+        // border: "1px solid var(--border)",
+        boxShadow: "0px 0px 4px 0px var(--shadow)",
         overflow: "hidden",
       }}
     >
@@ -427,10 +428,13 @@ function Tag({ text }: { text: string }) {
   return (
     <span
       style={{
-        padding: "6px 12px",
-        borderRadius: 10,
+        padding: "8px 12px",
+        borderRadius: 5,
         fontSize: 13,
-        boxShadow: "0px 0px 1px var(--shadow)",
+        // border: "1px solid var(--border)",
+        background: "var(--container)",
+        boxShadow: "0px 0px 3px 0px var(--border)",
+        
       }}
     >
       {text}

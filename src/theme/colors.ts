@@ -1,19 +1,21 @@
-export const darkColors = {
-  primary: "#160727ff",
+// 🌞 Light theme
+export const lightColors = {
+  primary: "#160727",
   background: "#f5f7fa",
   container: "#ffffff",
   text: "#1f1f1f",
   border: "#e0e0e0",
-  shadow: "#6d1212ff",
-  link: "#1670edff",
+  shadow: "#d9d9d9",
+  link: "#1677ff",
 };
 
-export const lightColors  = {
-  primary: "#160727ff",
+// 🌙 Dark theme
+export const darkColors = {
+  primary: "#160727",
   background: "#141414",
   container: "#1f1f1f",
   text: "#f0f0f0",
-  border: "#333333",
-  shadow: "#ecdedeff",
+  border: "#ffffff",
+  shadow: "#ffffff",
   link: "#9254de",
 };

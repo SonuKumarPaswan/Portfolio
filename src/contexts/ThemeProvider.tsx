@@ -3,13 +3,14 @@
 import { createContext, useState, useEffect } from "react";
 import { ConfigProvider, theme as antdTheme } from "antd";
 import { lightColors, darkColors } from "../theme/colors";
+import { tr } from "framer-motion/client";
 
 export const ThemeContext = createContext<any>(null);
 
 const { darkAlgorithm, defaultAlgorithm } = antdTheme;
 
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   const toggleTheme = () => setIsDark(!isDark);
 

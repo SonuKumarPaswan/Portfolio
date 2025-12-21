@@ -46,13 +46,14 @@ useEffect(() => {
     <section
       id="home"
       style={{
-        background: "",
+        // background: "var(--container)",
         minHeight: "100vh",
-        padding: "80px",
+        padding: "90px",
         display: "grid",
         gridTemplateColumns: "1.2fr 1fr",
         alignItems: "center",
         gap: 40,
+        marginTop: 40,
       }}
     >
       {/* ================= LEFT CONTENT ================= */}
@@ -117,7 +118,7 @@ useEffect(() => {
               href="mailto:sonupaswan0381@gmail.com"
               style={{
                 padding: "12px 24px",
-                boxShadow: "0px 0px 1px var(--shadow)",
+                boxShadow: "0px 0px 2px var(--shadow)",
                 color: "var(--text)",
                 borderRadius: 6,
                 textDecoration: "none",
@@ -137,7 +138,7 @@ useEffect(() => {
               download
               style={{
                 padding: "12px 24px",
-                boxShadow: "0px 0px 1px var(--shadow)",
+                boxShadow: "0px 0px 2px var(--shadow)",
                 color: "var(--text)",
                 borderRadius: 6,
                 textDecoration: "none",
@@ -147,15 +148,14 @@ useEffect(() => {
                 gap: 8,
               }}
             >
-              <FaDownload size={16} />
+              <FaDownload size={16} style={{
+                border:"1px solid --var(--text)"
+              }} />
               Download CV
             </a>
           </motion.div>
 
-              <hr style={{
-                border:"opacity:0.9",
-                // boxShadow:"1px 1px 1px var(--shadow)",
-              }}  />
+              <hr  />
         {/* Social Links */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -170,6 +170,9 @@ useEffect(() => {
                   color: "var(--text)",
                   textDecoration: "none",
                   fontWeight: 500,
+                   boxShadow: "0px 0px 5px var(--shadow)",
+                   padding: " 10px",
+                  borderRadius: 6,
                 }}> 
             <FaGithub size={22} />
           </a>
@@ -178,6 +181,9 @@ useEffect(() => {
                   color: "var(--text)",
                   textDecoration: "none",
                   fontWeight: 500,
+                   boxShadow: "0px 0px 5px var(--shadow)",
+                  padding: " 10px",
+                  borderRadius: 6,
                 }}>
             <FaLinkedin size={22} />
           </a>
@@ -186,6 +192,10 @@ useEffect(() => {
                   color: "var(--text)",
                   textDecoration: "none",
                   fontWeight: 500,
+                  boxShadow: "0px 0px 5px var(--shadow)",
+                  padding: "10px",
+                  borderRadius: 6,
+                  alignItems:"center",
                 }}>
             <SiLeetcode size={22} />
           </a>
@@ -197,6 +207,9 @@ useEffect(() => {
               textDecoration: "none",
               color: "var(--text)",
               fontWeight: 500,
+              padding: "12px 24px",
+              borderRadius: 6,
+              boxShadow: " 0px 0px 4px var(--shadow)",
             }}
           >
             View Projects →
@@ -212,13 +225,19 @@ useEffect(() => {
         style={{ textAlign: "center" }}
       >
         <Image
-          src="/image/tourism.jpg"
+          src="/image/profile.png"
           alt="Sonu Paswan"
           width={380}
           height={380}
           style={{
-            borderRadius: "50%",
-            objectFit: "cover",
+            borderBottomRightRadius: 200,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
+            // borderBottomLeftRadius: 20,
+            borderStyle: "solid",
+            borderBlockColor: "var(--border)",
+            boxShadow: " -10px  -5px 0px  0px var(--shadow)",
+            objectFit: "inherit",
           }}
         />
       </motion.div>

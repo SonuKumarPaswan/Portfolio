@@ -38,9 +38,13 @@ export default function Navbar() {
   return (
     <motion.header
       style={{
-        position: "sticky",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
         zIndex: 100,
-        // background: "var(--container)",
+        background: "var(--container)",
+        opacity: 0.97,
         borderBottom: "1px solid var(--border)",
         boxShadow: "0px 0px  1px var(--shadow)",
       }}
@@ -55,6 +59,10 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             style={{
               padding: "8px 80px",
+              position: "sticky",
+              top: 0,
+              left: 0,
+              right: 0,
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -62,12 +70,19 @@ export default function Navbar() {
             }}
           >
             {/* Left */}
-            <div style={{ display: "flex", gap: 18, alignItems: "center" }}>
+            <div style={{ 
+              display: "flex", 
+              gap: 18, 
+              alignItems: "center"
+               }}>
               <a
                 href="mailto:sonupaswan0381@gmail.com"
                 style={{ display: "flex", gap: 6, alignItems: "center", color: "var(--text)" }}
               >
-                <FaEnvelope style={iconStyle} />
+                <FaEnvelope style={{
+                  color: "#25D366",
+                  fontSize: 22,
+                }} />
                 sonupaswan0381@gmail.com
               </a>
 
@@ -76,18 +91,35 @@ export default function Navbar() {
                 target="_blank"
                 style={{ display: "flex", gap: 6, alignItems: "center", color: "var(--text)" }}
               >
-                <FaPhoneAlt style={iconStyle} />
+                <FaWhatsapp   style={{
+                  color: "#25D366",
+                  fontSize: 22,
+                }} />
                 +91 94302 66995
               </a>
             </div>
 
             {/* Right */}
             <div style={{ display: "flex", gap: 20 }}>
+              <a
+                href="https://wa.me/919430266995"
+                target="_blank"
+                style={{ display: "flex", gap: 6, alignItems: "center", color: "var(--text)" }}
+              >
               <FaWhatsapp style={{ ...iconStyle, color: "#25D366" }} />
+              </a>
+              <a href="https://www.instagram.com/sonu_paswan_0381/" target="_blank">
               <FaInstagram style={iconStyle} />
+              </a>
+              <a href="https://www.facebook.com/" target="_blank">
               <FaFacebook style={iconStyle} />
+              </a>
+              <a href="https://www.linkedin.com/in/sonukumarpaswan/" target="_blank">  
               <FaLinkedin style={iconStyle} />
+              </a>
+              <a href="https://github.com/SonuKumarPaswan" target="_blank">
               <FaGithub style={iconStyle} />
+              </a>
             </div>
           </motion.div>
         )}
