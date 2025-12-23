@@ -10,7 +10,10 @@ export default function ProjectItem({
 }: {
   project: any;
   isLeft: boolean;
-}) {
+})
+{
+ 
+
   return (
     <div
       style={{
@@ -23,18 +26,30 @@ export default function ProjectItem({
       }}
     >
       {/* ===== CENTER DOT ===== */}
-      <span
-        style={{
-          position: "absolute",
-          left: "50%",
-          width: 14,
-          height: 14,
-          borderRadius: "50%",
-          background: "#1677ff",
-          transform: "translateX(-50%)",
-          zIndex: 2,
-        }}
-      />
+     
+
+<span
+  style={{
+    position: "absolute",
+    left: "50%",
+    padding: 8,
+    borderRadius: "50%",
+    background: "var(--container)",
+    transform: "translateX(-50%)",
+    zIndex: 2,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: 600,
+  }}
+>
+  <h1 style={{
+    color:"var(--text)"
+  }}>✓</h1>
+</span>
+
 
       {isLeft ? (
         <>

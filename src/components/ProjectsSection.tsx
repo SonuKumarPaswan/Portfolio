@@ -82,22 +82,24 @@ export default function ProjectSection() {
       id="projects"
       style={{
         padding: "80px 60px",
-        maxWidth: 1400,
+        maxWidth: 1500,
         margin: "0 auto",
         position: "relative",
       }}
     >
-      <h2 style={{ marginBottom: 80 }}>Projects</h2>
+      <h2 style={{ marginBottom: 80 }}>
+        <i>My projects </i>
+      </h2>
 
       {/* ===== SINGLE VERTICAL DIVIDER ===== */}
       <div
         style={{
           position: "absolute",
-          top: 160,
-          bottom: 0,
+          top: 200,
+          bottom: 180,
           left: "50%",
-          width: 3,
-          background: "rgba(255,255,255,0.25)",
+          width: 5,
+          background: "var(--text)",
           transform: "translateX(-50%)",
         }}
       />

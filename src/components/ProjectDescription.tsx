@@ -12,9 +12,10 @@ export default function ProjectDescription({ project }: { project: any }) {
       viewport={{ once: true }}
       style={{
         padding: 28,
-        borderRadius: 18,
-        background: "rgba(255,255,255,0.08)",
-        backdropFilter: "blur(10px)",
+        borderRadius: 5,
+        boxShadow: "1px 12px 1px  1px solid var(--shadow)",
+        background: "var(--container)",
+        // backdropFilter: "blur(10px)",
       }}
     >
       <ul style={{ lineHeight: 1.9 }}>
