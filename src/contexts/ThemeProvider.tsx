@@ -54,6 +54,8 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
     root.style.setProperty("--primary", colors.primary);
     root.style.setProperty("--border", colors.border);
     root.style.setProperty("--shadow", colors.shadow);
+    root.style.setProperty("--link", colors.link);
+    root.style.setProperty("--heading", colors.heading);
   }, [isDark]);
 
   return (
