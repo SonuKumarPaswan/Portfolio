@@ -1,80 +1,106 @@
-
 "use client";
 
 import React from "react";
-import { Timeline } from "antd";
+import { Timeline, Typography, Card } from "antd";
+
+const { Title, Paragraph, Text } = Typography;
 
 const ExperienceSection = () => {
   return (
     <section
       id="experience"
       style={{
-        padding: "20px 80px",
-        // margin: "20px",
-        background:"var(--container)"
+        padding: "80px",
+        // background: "var(--container)",
       }}
     >
-      <h2 style={{ fontSize: "32px", marginBottom: "40px" }}>
-        <i>Professional Experience</i>
-      </h2>
+      <Title
+        level={2}
+        style={{
+          marginBottom: 60,
+          color: "var(--heading)",
+          textAlign: "center",
+          fontSize: 36,
+        }}
+      >
+        Professional Experience
+      </Title>
 
       <Timeline
-         style={{
-          // background:"var(--container)"
-         }}
-        mode="left"
+        mode="start"
         items={[
           {
-            label: "2024 – Present",
-            children: (
-              <>
-                <h3>Full Stack Developer – Dream Sky Airways</h3>
-                <p>
-                  • Developed a travel booking platform using <b>Next.js, React,
-                  Node.js, MongoDB</b>
-                </p>
-                <p>
-                  • Integrated third-party APIs for flights, hotels, and cabs
-                </p>
-                <p>
-                  • Built secure REST APIs and optimized performance & SEO
-                </p>
-              </>
+            title: "2024 – Present",
+            content: (
+              <Card
+                variant="outlined"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 12,
+                }}
+              >
+                <Title level={4}>Full Stack Developer – Dream Sky Airways</Title>
+                <Paragraph>
+                  • Built a travel booking platform using{" "}
+                  <Text strong>Next.js, React, Node.js, MongoDB</Text>
+                </Paragraph>
+                <Paragraph>
+                  • Integrated APIs for flights, hotels, and cabs
+                </Paragraph>
+                <Paragraph>
+                  • Optimized performance, security, and SEO
+                </Paragraph>
+              </Card>
             ),
           },
           {
-            label: "2024",
-            children: (
-              <>
-                <h3>Web Development Intern – CodSoft</h3>
-                <p>
-                  • Built responsive UI components using <b>HTML, CSS, JavaScript,
-                  React.js</b>
-                </p>
-                <p>
-                  • Worked on real-world projects with Git & GitHub
-                </p>
-                <p>
-                  • Improved component reusability and code quality
-                </p>
-              </>
+            title: "2024",
+            content: (
+              <Card
+                variant="outlined"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 12,
+                }}
+              >
+                <Title level={4}>Web Development Intern – CodSoft</Title>
+                <Paragraph>
+                  • Developed responsive UI using{" "}
+                  <Text strong>HTML, CSS, JavaScript, React</Text>
+                </Paragraph>
+                <Paragraph>
+                  • Used Git & GitHub in real-world projects
+                </Paragraph>
+                <Paragraph>
+                  • Improved component quality and reusability
+                </Paragraph>
+              </Card>
             ),
           },
           {
-            label: "Projects",
-            children: (
-              <>
-                <h3>TripJurnify – Full Stack Project</h3>
-                <p>
-                  • Designed and developed a complete travel booking system
-                </p>
-                <p>
-                  • Integrated <b>Amadeus API</b> for real-time search
-                </p>
-                <p>
-                  • Focused on scalability, clean architecture, and deployment
-                </p>
-              </>
+            title: "Projects",
+            content: (
+              <Card
+                variant="outlined"
+                style={{
+                  background: "var(--bg)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 12,
+                }}
+              >
+                <Title level={4}>TripJurnify – Full Stack Project</Title>
+                <Paragraph>
+                  • Designed a complete travel booking system
+                </Paragraph>
+                <Paragraph>
+                  • Integrated <Text strong>Amadeus API</Text>
+                </Paragraph>
+                <Paragraph>
+                  • Focused on scalable & clean architecture
+                </Paragraph>
+              </Card>
             ),
           },
         ]}
@@ -84,4 +110,3 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
-

@@ -97,6 +97,7 @@ export default function ProjectSection() {
         maxWidth: 1500,
         margin: "0 auto",
         position: "relative",
+        color: "var(--heading)" 
       }}
     >
       <h2 style={{ marginBottom: 80 }}>
