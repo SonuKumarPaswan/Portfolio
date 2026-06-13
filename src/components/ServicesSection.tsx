@@ -1,21 +1,19 @@
 "use client";
 
-import React from "react";
-import { Card, Col, Row, Typography } from "antd";
+import { motion } from "framer-motion";
+import { Card } from "antd";
 import {
+  CloudOutlined,
   CodeOutlined,
   DatabaseOutlined,
-  LayoutOutlined,
-  CloudOutlined,
   Html5Outlined,
+  LayoutOutlined,
 } from "@ant-design/icons";
-
-const { Title, Paragraph } = Typography;
 
 const services = [
   {
     title: "Static Website Development",
-    icon: <Html5Outlined style={{ fontSize: 28, color: "var(--text)" }} />,
+    icon: <Html5Outlined style={{ fontSize: 32, color: "var(--text)" }} />,
     points: [
       "HTML, CSS, JavaScript",
       "Fast & Lightweight Websites",
@@ -25,7 +23,7 @@ const services = [
   },
   {
     title: "Frontend Development",
-    icon: <CodeOutlined style={{ fontSize: 28, color: "var(--text)" }} />,
+    icon: <CodeOutlined style={{ fontSize: 32, color: "var(--text)" }} />,
     points: [
       "React.js / Next.js",
       "Component Based UI",
@@ -35,7 +33,7 @@ const services = [
   },
   {
     title: "Backend Development",
-    icon: <DatabaseOutlined style={{ fontSize: 28, color: "var(--text)" }} />,
+    icon: <DatabaseOutlined style={{ fontSize: 32, color: "var(--text)" }} />,
     points: [
       "Node.js & Express.js",
       "MongoDB & MySQL",
@@ -45,7 +43,7 @@ const services = [
   },
   {
     title: "Dynamic Web Projects",
-    icon: <CloudOutlined style={{ fontSize: 28, color: "var(--text)" }} />,
+    icon: <CloudOutlined style={{ fontSize: 32, color: "var(--text)" }} />,
     points: [
       "Admin Dashboards",
       "Role-Based Systems",
@@ -55,7 +53,7 @@ const services = [
   },
   {
     title: "UI / UX Design",
-    icon: <LayoutOutlined style={{ fontSize: 28, color: "var(--text)" }} />,
+    icon: <LayoutOutlined style={{ fontSize: 32, color: "var(--text)" }} />,
     points: [
       "Modern UI Design",
       "Wireframes & Prototypes",
@@ -70,65 +68,111 @@ const ServicesSection = () => {
     <section
       id="services"
       style={{
-        padding: "80px 40px",
+        padding: "100px 5%",
         background: "var(--bg)",
       }}
     >
-      {/* Heading */}
-      <div style={{ textAlign: "center", marginBottom: 56 }}>
-        <Title level={2} style={{ color: "var(--heading)" }}>
+      <div style={{ textAlign: "center", marginBottom: 70 }}>
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{
+            color: "var(--heading)",
+            fontSize: "clamp(28px, 4vw, 42px)",
+            marginBottom: 20,
+          }}
+        >
           Our Services
-        </Title>
-        <Paragraph
+        </motion.h2>
+
+        <p
           style={{
             color: "var(--text)",
             maxWidth: 620,
             margin: "0 auto",
+            fontSize: "1.1rem",
+            opacity: 0.9,
           }}
         >
           We provide complete end-to-end web development services using modern
           technologies and scalable architecture.
-        </Paragraph>
+        </p>
       </div>
 
-      {/* Service Cards */}
-      <Row gutter={[24, 24]} justify="center">
-        {services.map((service) => (
-          <Col
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+          gap: 24,
+          maxWidth: "1400px",
+          margin: "0 auto",
+        }}
+      >
+        {services.map((service, index) => (
+          <motion.div
             key={service.title}
-            xs={24}   // mobile → 1 card
-            sm={12}   // tablet → 2 cards
-            md={8}    // laptop → 3 cards ✅
-            lg={8}    // desktop → 3 cards ✅
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <Card
               hoverable
               style={{
                 height: "100%",
                 background: "var(--container)",
+                borderRadius: "16px",
                 border: "1px solid var(--border)",
-                boxShadow: "var(--shadow)",
+                boxShadow: "0px 0px 8px var(--shadow)",
+                padding: "12px",
               }}
             >
-              <div style={{ marginBottom: 16 }}>
-                {service.icon}
-              </div>
+              <div style={{ marginBottom: 20 }}>{service.icon}</div>
 
-              <Title level={4} style={{ color: "var(--heading)" }}>
+              <h3
+                style={{
+                  color: "var(--heading)",
+                  marginBottom: 18,
+                  fontSize: "1.45rem",
+                }}
+              >
                 {service.title}
-              </Title>
+              </h3>
 
-              <ul style={{ paddingLeft: 18, color: "var(--text)" }}>
-                {service.points.map((point) => (
-                  <li key={point} style={{ marginBottom: 6 }}>
+              <ul
+                style={{
+                  paddingLeft: 20,
+                  color: "var(--text)",
+                  marginBottom: 0,
+                  lineHeight: 1.7,
+                }}
+              >
+                {service.points.map((point, i) => (
+                  <li key={i} style={{ marginBottom: 10 }}>
                     {point}
                   </li>
                 ))}
               </ul>
             </Card>
-          </Col>
+          </motion.div>
         ))}
-      </Row>
+      </div>
+
+      {/* Responsive Styles */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section {
+            padding: 70px 5% !important;
+          }
+        }
+
+        @media (max-width: 480px) {
+          section {
+            padding: 60px 5% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

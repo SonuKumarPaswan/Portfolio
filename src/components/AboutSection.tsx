@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {useEffect, useState} from "react";
+import {motion, AnimatePresence} from "framer-motion";
 import Image from "next/image";
 
 export default function AboutSection() {
@@ -26,10 +26,10 @@ export default function AboutSection() {
       >
         {/* Left Image */}
         <motion.div
-          initial={{ x: -60, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{x: -60, opacity: 0}}
+          whileInView={{x: 0, opacity: 1}}
+          transition={{duration: 0.6}}
+          viewport={{once: true}}
         >
           <Image
             src="/image/profile.png"
@@ -37,44 +37,68 @@ export default function AboutSection() {
             width={420}
             height={400}
             priority
-            style={{ borderRadius: 15 }}
+            style={{borderRadius: 15}}
           />
         </motion.div>
 
         {/* Right Content */}
         <motion.div
-          initial={{ x: 60, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
+          initial={{x: 60, opacity: 0}}
+          whileInView={{x: 0, opacity: 1}}
+          transition={{duration: 0.6}}
+          viewport={{once: true}}
           style={{
             padding: 35,
             background: "var(--container)",
-            // border: "1px solid var(--border)",
-            borderRadius: 14, 
+            borderRadius: 14,
             boxShadow: "0px 0px 3px 0px var(--shadow)",
           }}
         >
-          <i><h2 style={{ color: "var(--heading)" }}>About Me</h2></i>
-          <br />
-          <p>
-           Hi 👋, I’m Sonu Paswan
+          <h2 style={{color: "var(--heading)", marginBottom: 20}}>About Me</h2>
 
-            I am a Full Stack Developer with hands-on experience in building production-ready client projects using Next.js, TypeScript, MERN Stack, and Java Full Stack technologies.
-          </p> <br />
           <p>
-          I have completed my B.Tech in Electronics and Communication Engineering from Technocrats Institute of Technology, Bhopal, and I currently focus on developing scalable, responsive, and SEO-optimized web applications for real businesses.
+            Hi 👋, I'm <strong>Sonu Paswan</strong>, a passionate Full Stack
+            Developer specializing in Next.js, React, TypeScript, MERN Stack,
+            and Java technologies. I enjoy building modern, scalable, and
+            user-friendly web applications that solve real-world problems.
           </p>
+
           <br />
+
           <p>
-           I enjoy working on end-to-end development — from crafting modern user interfaces to building reliable backend systems and APIs. I have experience delivering client-focused solutions, deploying applications, and optimizing performance for real-world use.
+            I completed my B.Tech in Electronics & Communication Engineering
+            from Technocrats Institute of Technology, Bhopal. My journey into
+            software development started with a curiosity for creating digital
+            solutions and has grown into a strong passion for full-stack
+            application development.
+          </p>
+
+          <br />
+
+          <p>
+            I have experience developing responsive frontend interfaces,
+            designing robust backend APIs, integrating databases, and deploying
+            applications to production environments. My focus is always on clean
+            code, performance optimization, and delivering high-quality user
+            experiences.
+          </p>
+
+          <br />
+
+          <p>
+            Currently, I am working as a Full Stack Developer and continuously
+            expanding my expertise in modern web technologies, system design,
+            and scalable application architecture. I am always eager to learn,
+            collaborate, and contribute to impactful projects.
           </p>
         </motion.div>
       </div>
 
       {/* ================= EDUCATION ================= */}
       <div>
-        <i><h2 style={{ marginBottom: 35, color: "var(--heading)" }}>Education</h2></i>
+        <i>
+          <h2 style={{marginBottom: 35, color: "var(--heading)"}}>Education</h2>
+        </i>
 
         <div
           style={{
@@ -100,14 +124,19 @@ export default function AboutSection() {
           <EducationCard
             title="Ram Krishna College Madhubani, Bihar"
             subtitle="12th – Science (Bihar Board)"
-            
             link="https://rkclnmu.ac.in/"
             images={[
               "/education/rkc/1.jpeg",
               "/education/rkc/2.jpeg",
               "/education/rkc/3.jpeg",
             ]}
-            tags={[ "Percentage 71%", "Passout 2020","Maths", "Physics", "Chemistry" ]}
+            tags={[
+              "Percentage 71%",
+              "Passout 2020",
+              "Maths",
+              "Physics",
+              "Chemistry",
+            ]}
           />
 
           <EducationCard
@@ -125,14 +154,14 @@ export default function AboutSection() {
 
 /* ================= AUTO IMAGE SLIDER (FULL WIDTH) ================= */
 
-function AutoImageSlider({ images }: { images: string[] }) {
+function AutoImageSlider({images}: {images: string[]}) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (images.length <= 1) return;
     const timer = setInterval(
       () => setIndex((prev) => (prev + 1) % images.length),
-      2500
+      2500,
     );
     return () => clearInterval(timer);
   }, [images]);
@@ -153,10 +182,10 @@ function AutoImageSlider({ images }: { images: string[] }) {
           key={index}
           src={images[index]}
           alt="college"
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={{opacity: 0, scale: 1.05}}
+          animate={{opacity: 1, scale: 1}}
+          exit={{opacity: 0}}
+          transition={{duration: 0.6}}
           style={{
             width: "100%",
             height: "100%",
@@ -189,11 +218,11 @@ function EducationCard({
     <motion.a
       href={link}
       target="_blank"
-      initial={{ y: 40, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
+      initial={{y: 40, opacity: 0}}
+      whileInView={{y: 0, opacity: 1}}
+      whileHover={{scale: 1.02}}
+      transition={{duration: 0.4}}
+      viewport={{once: true}}
       className="edu-card"
       style={{
         position: "relative",
@@ -207,13 +236,12 @@ function EducationCard({
         overflow: "hidden",
       }}
     >
-
       <AutoImageSlider images={images} />
-  
-      <h2 style={{ marginBottom: 10 ,color: "var(--heading)" }}>{title}</h2>
-      <p style={{ marginBottom: 16 }}>{subtitle}</p>
 
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+      <h2 style={{marginBottom: 10, color: "var(--heading)"}}>{title}</h2>
+      <p style={{marginBottom: 16}}>{subtitle}</p>
+
+      <div style={{display: "flex", gap: 8, flexWrap: "wrap"}}>
         {tags.map((tag) => (
           <Tag key={tag} text={tag} />
         ))}
@@ -240,7 +268,7 @@ function EducationCard({
 
 /* ================= TAG ================= */
 
-function Tag({ text }: { text: string }) {
+function Tag({text}: {text: string}) {
   return (
     <span
       style={{
@@ -250,7 +278,6 @@ function Tag({ text }: { text: string }) {
         // border: "1px solid var(--border)",
         background: "var(--container)",
         boxShadow: "0px 0px 3px 0px var(--border)",
-        
       }}
     >
       {text}
